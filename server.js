@@ -26,7 +26,7 @@ const app = express();
 
 app.use(bodyParser.json())
 app.use(cors())
-app.get('/', (req, res) => {res.send(`It's Working`)})
+app.get('/', (req, res) => {res.send('It is Working')})
 // app.get('/', (req, res)=> {
 // db.select('*').from('users')
 //     .then(user => {res.json(user);
