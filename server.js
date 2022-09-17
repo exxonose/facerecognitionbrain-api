@@ -26,11 +26,12 @@ const app = express();
 
 app.use(bodyParser.json())
 app.use(cors())
-app.get('/', (req, res)=> {
-db.select('*').from('users')
-    .then(user => {res.json(user);
-    })
-})
+app.get('/', (req, res) => {res.send(`It's Working`)})
+// app.get('/', (req, res)=> {
+// db.select('*').from('users')
+//     .then(user => {res.json(user);
+//     })
+// })
 
 app.post('/signin',signin.handleSignin(db, bcrypt)) //using nested function to inject dependencies
 app.post('/register',(req, res) => {register.handleRegister(req, res, db, bcrypt)})
